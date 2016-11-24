@@ -1,9 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="banner-content">
+    <h1><%= @cocktail.name %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
 
-<%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
-<%= link_to 'Back', cocktails_path %>
+      <h2 class='text-center'>Ingredient</h2>
+
+      <hr>
+
+      <h2 class='text-center'>Add an ingredient</h2>
+      <%= simple_form_for [@cocktail, @ingredient] do |f| %>
+        <%= f.input :name %>
+        <%= f.submit 'Create a ingredient', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
