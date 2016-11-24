@@ -1,26 +1,17 @@
 <h1>New Cocktail</h1>
 
-<%= form_for(cocktail) do |f| %>
-  <% if cocktail.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(cocktail.errors.count, "error") %> prohibited this cocktail from being saved:</h2>
+<%= simple_form_for(@cocktail) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% cocktail.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
+  <div class="form-inputs">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit %>
   </div>
-<% end %>
+  <% end %>
 
 <%= link_to 'Back', cocktails_path %>
