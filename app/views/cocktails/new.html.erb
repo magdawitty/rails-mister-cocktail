@@ -1,8 +1,6 @@
-<h1>New Cocktail</h1>
+<h1>Add a Cocktail</h1>
 
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.error_notification %>
-
+<%= simple_form_for Cocktail.new do |f| %>
 
   <div class="form-inputs">
     <%= f.label :name %>

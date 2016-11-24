@@ -18,10 +18,10 @@ class DosesController < ApplicationController
   end
 
   def destroy
+    @dose = Dose.find(params[:id])
+    @cocktail = @dose.cocktail
     @dose.destroy
-    respond_to do |format|
-      format.html { redirect_to cocktails, notice: 'Dose was successfully destroyed.' }
-    end
+    redirect_to cocktail_path(@cocktail)
   end
 
   private

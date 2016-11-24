@@ -3,10 +3,10 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-xs-6">
         <h4>Cocktail</h4>
       </div>
-      <div class="col-md-6">
+      <div class="col-xs-6">
         <h4>Links</h4>
       </div>
     </div>
@@ -15,11 +15,11 @@
   <div class="container">
     <% @cocktails.each do |cocktail| %>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-xs-6">
         <%= cocktail.name %>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-xs-6">
         <%= link_to 'See the details of this cocktail', cocktail, {class: "btn btn-primary"}%>
       </div>
     </div>
@@ -30,4 +30,4 @@
 
   <br>
 
-  <%= link_to 'New cocktail', new_cocktail_path, {class: "btn btn-primary"} %>
+  <%= link_to 'Add a cocktail', new_cocktail_path, {class: "btn btn-primary"} %>

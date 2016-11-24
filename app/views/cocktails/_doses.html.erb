@@ -1,6 +1,7 @@
-<%  @cocktail.doses.each do |r| %>
+<%  @cocktail.doses.each do |dose| %>
 <li>
-<%= r.description %><br/>
-<%= r.ingredient %>
+  <%= dose.description %><br/>
+  <%= dose.ingredient %>
+
 </li>
 <% end %>

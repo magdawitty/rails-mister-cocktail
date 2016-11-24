@@ -1,20 +1,29 @@
 <div class="banner-content">
-    <h1><%= @cocktail.name %></h1>
+  <h1><%= @cocktail.name %></h1>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <h2 class='text-center'></h2>
-        <%=  @cocktail.name %>
-        <%=  render "cocktails/doses" %>
-        <%= link_to 'Add an Ingredient', new_cocktail_dose_path(@cocktail), {class: "btn btn-primary"} %>
+      <%=  @cocktail.name %>
+      <%  @cocktail.doses.each do |dose| %>
+      <li>
+        <%= dose.description %><br/>
+        <%= dose.ingredient %>
 
+      </li>
+      <% end %>
+
+      <!-- copy delete method from livecode example -->
+      <br>
+
+      <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), {class: "btn btn-primary"} %>
     </div>
   </div>
 </div>
 
-<%= link_to 'All cocktails', cocktails_path, {class: "btn btn-primary"} %>
+<%= link_to 'Back to all the cocktails', cocktails_path, {class: "btn btn-primary"} %>
 
 
 
