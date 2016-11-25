@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsMisterCocktail</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>RailsMisterCocktail</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= cloudinary_js_config %> <!-- Append this after the main `javascript_include_tag`. -->
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <%= yield %>
+</body>
 </html>

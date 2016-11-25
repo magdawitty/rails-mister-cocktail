@@ -22,3 +22,8 @@ json = JSON.parse(file)
 json['drinks'].each do |ingredient|
   Ingredient.create name: ingredient['strIngredient1']
 end
+
+url = "https://static.pexels.com/photos/4784/alcohol-bar-party-cocktail.jpg"
+mojito = Cocktail.new(name: 'NES')
+mojito.remote_photo_url = url
+mojito.save

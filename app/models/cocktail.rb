@@ -4,7 +4,8 @@ class Cocktail < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
 
-
+  mount_uploader :photo, PhotoUploader
+  has_attachment :photo
 
 end
 

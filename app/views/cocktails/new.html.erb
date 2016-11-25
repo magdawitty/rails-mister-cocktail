@@ -2,14 +2,23 @@
 
 <%= simple_form_for Cocktail.new do |f| %>
 
-  <div class="form-inputs">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+<div class="form-inputs">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
 
-  <div class="actions">
-    <%= f.button :submit %>
-  </div>
-  <% end %>
+<%= f.input :photo %>
+<%= f.input :photo_cache, as: :hidden %>
+<%= f.input :photo, as: :attachinary %>
+
+<div class="actions">
+  <%= f.button :submit %>
+
+
+</div>
+<% end %>
+
+
+
 
 <%= link_to 'Back', cocktails_path %>
