@@ -10,13 +10,14 @@
       <%  @cocktail.doses.each do |dose| %>
       <li>
         <%= dose.description %><br/>
-        <%= dose.ingredient.name %>
+        <%= dose.ingredient.name %> <br/>
+        <%= link_to 'destroy', dose_path(dose), method: :delete %>
 
       </li>
       <% end %>
 
       <!-- copy delete method from livecode example -->
-      <%= link_to 'destroy', dose_path(dose), method: :delete %>
+
       <br>
 
       <h2>Add a dose</h2>
@@ -24,6 +25,8 @@
     </div>
   </div>
 </div>
+
+<br>
 
 <%= link_to 'Back to all the cocktails', cocktails_path, {class: "btn btn-primary"} %>
 
