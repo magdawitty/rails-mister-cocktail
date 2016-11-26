@@ -1,0 +1,29 @@
+/* Your banner CSS code here */
+.banner{
+color: white;
+text-align: center;
+height: 60vh;
+background-size: cover;
+display: flex;
+align-items: center;
+justify-content: center
+
+}
+
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0,5px 0,5px rgba(0, 0, 0, 0.2);
+}
+
+/*.banner p{
+  font-size: 40px
+  font-weight: lighter;
+  color: #F5FFF0;
+  margin-bottom: 50px;
+}
+
+.banner .btn-green{
+  margin-top: 200px;
+}
+*/

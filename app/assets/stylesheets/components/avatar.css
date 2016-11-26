@@ -1,0 +1,13 @@
+/* Your avatar CSS code here */
+.avatar {
+  width: 30px;
+  border-radius: 50%
+}
+.avatar.border {
+  box-shadow: 0 1px 2 px rgba(0,0,0,2);
+  border: white 1px solid;
+}
+.avatar-large{
+  width: 50px;
+}
+

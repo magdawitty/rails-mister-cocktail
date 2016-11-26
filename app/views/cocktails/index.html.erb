@@ -1,40 +1,44 @@
-<%= cl_image_tag("ausnwzwx3hnxn6xl5myv",
-width: 400, height: 300, crop: :fill) %>
-<%= cl_image_tag("IMAGE_WITH_FACE_ID",
-width: 400, height: 300, crop: :thumb, gravity: :face) %>
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.pexels.com/photos/4295/black-and-white-alcohol-bar-drinks.jpg');">
+    <div class="banner-content">
+      <h1>Your classic cocktail maker</h1>
 
 
+      <div class="main-container">
 
-<div class="container">
-  <h1 class='text-center'>Welcome to Cocktail Maker</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <h4>Cocktail</h4>
+            </div>
+            <div class="col-xs-6">
+              <h4>Links</h4>
+            </div>
+          </div>
+        </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-6">
-        <h4>Cocktail</h4>
-      </div>
-      <div class="col-xs-6">
-        <h4>Links</h4>
+        <div class="container">
+          <div class="row">
+            <% @cocktails.each do |cocktail| %>
+
+            <div class="col-xs-12 col-sm-4">
+              <div class="card text-center">
+
+                <div class="card-header" style="background-image: url('<%= image_path cocktail.photo%>')">
+                </div>
+              </div>
+              <div class="card-body">
+                <%= link_to cocktail.name, cocktail_path(cocktail) %>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
-  </div>
-
-  <div class="container">
-    <% @cocktails.each do |cocktail| %>
-    <div class="row">
-      <div class="col-xs-6">
-        <%= cocktail.name %>
-      </div>
-
-      <div class="col-xs-6">
-        <%= link_to 'See the details of this cocktail', cocktail, {class: "btn btn-primary"}%>
-      </div>
-    </div>
-    <% end %>
-  </div>
 
 
 
-  <br>
+    <br>
 
-  <%= link_to 'Add a cocktail', new_cocktail_path, {class: "btn btn-primary"} %>
+    <%= link_to 'Add a cocktail', new_cocktail_path, {class: "btn btn-primary"} %>
